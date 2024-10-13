@@ -12,6 +12,14 @@
  app.get("/courseDetails", (req, res) => {
     res.send(courseDetails);
   });
+
+  app.get("/pDetails:id", (req,res)=>{
+   id=req.params.id;
+   console.log(id);
+   const selectedCourse = pDetails.find((p) =>p.course_id===id);
+   res.send(selectedCourse);
+
+  })
  app.listen (port, () => {
     console.log(`React Firebase Authentication server is running on ${port}`);
  });
