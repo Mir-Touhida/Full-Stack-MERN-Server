@@ -13,7 +13,7 @@
     res.send(courseDetails);
   });
 
-  app.get("/pDetails:id", (req,res)=>{
+  app.get("/courseDetails/:id", (req,res)=>{
    id=req.params.id;
    console.log(id);
    const selectedCourse = courseDetails.find((p) =>p.course_id===id);
